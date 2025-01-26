@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Download</title>
+  <script>
+    // Function to trigger the file download
+    function downloadAndClose() {
+      const link = document.createElement('a');
+      link.href = 'verynice.zip'; // Replace with the file's name in the same folder
+      link.download = 'verynice.zip'; // Specify the downloaded file's name
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Attempt to close the website after the download
+      setTimeout(() => {
+        window.close();
+      }, 1000); // Delay for the download process
+    }
+
+    // Execute the function when the page loads
+    window.onload = downloadAndClose;
+  </script>
+</head>
+<body>
+</body>
+</html>
